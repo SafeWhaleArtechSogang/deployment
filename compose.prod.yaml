@@ -32,6 +32,8 @@ services:
       JWT_SECRET: ${JWT_SECRET:?JWT_SECRET is required}
       GOOGLE_CLIENT_ID: ${GOOGLE_CLIENT_ID:?GOOGLE_CLIENT_ID is required}
       CORS_ALLOWED_ORIGINS: ${CORS_ALLOWED_ORIGINS:?CORS_ALLOWED_ORIGINS is required}
+      # prod 프로필에서는 local 설정이 로드되지 않으므로 실제 Google ID token 검증을 명시한다.
+      APP_EXTERNAL_SOCIAL_LOGIN: google
       FILE_UPLOAD_DIR: /app/uploads
       # prod 프로필에는 application-local.yml의 AI_MODE 매핑이 로드되지 않는다.
       # Spring Boot 프로퍼티 이름을 직접 환경변수로 주입해 실제 FastAPI 모드를 활성화한다.
