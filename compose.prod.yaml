@@ -43,6 +43,9 @@ services:
       APP_EXTERNAL_AI_SERVER_READ_TIMEOUT: 180s
       APP_EXTERNAL_AI_SERVER_QUESTION_COUNT: 3
       AGENT_TOKEN: ${AGENT_TOKEN:?AGENT_TOKEN is required}
+      # 심사위원 게스트 로그인. 기본 꺼짐이며 심사 기간에만 true + 접근 코드를 지정한다.
+      GUEST_LOGIN_ENABLED: ${GUEST_LOGIN_ENABLED:-false}
+      GUEST_ACCESS_CODE: ${GUEST_ACCESS_CODE:-}
     expose:
       - "8080"
     volumes:
